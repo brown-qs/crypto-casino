@@ -5,11 +5,7 @@
     <div v-else class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       <div v-for="(bet, idx) in betsLocal" :key="`bet-${idx}`">
         <div class="flex flex-wrap items-start space-x-3 font-medium">
-          <img
-            :src="baseUrl + bet.user.avatar"
-            alt=""
-            class="w-10 h-10 rounded-full"
-          />
+          <img :src="bet.user.avatar" alt="" class="w-10 h-10 rounded-full" />
 
           <div class="flex flex-col flex-1 overflow-hidden overflow-ellipsis">
             <div class="flex items-center space-x-3">
@@ -70,10 +66,6 @@ export default {
       return this.bets.find(
         (bet) => bet.user.id === this.$auth.user.id && bet.status === 'await'
       )
-    },
-    baseUrl() {
-      console.log(process.env)
-      return process.env.baseUrl
     },
   },
   beforeMount() {

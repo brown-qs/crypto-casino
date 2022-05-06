@@ -1,21 +1,20 @@
 # Gambling template casino
 
-Casino with game of crash. In development used websockets (socket.io), node.js (adonis.js) and nuxt.js.  
-Demo: https://www.youtube.com/watch?v=ZP6pCAx_dkY  
-**_Сотрудничество (разработка):_** [Telegram](https://t.me/sonicbhf)
+Casino with game of crash. In development used websockets (socket.io), node.js (adonis.js) and nuxt.js.
 
 ## Frontend:
 
-* Vue.js
-* Tailwind
-* БЭМ (small)
-* Socket.io
-* Vue-tailwind (UI)
-* i18n internalization (RU & EN)
-* @nuxtjs/auth with social
+- Vue.js
+- Tailwind
+- БЭМ (small)
+- Socket.io
+- Vue-tailwind (UI)
+- i18n internalization
+- @nuxtjs/auth with social
 
 ### Link storage (Linux):
-sudo ln -s /absolute_path_to/casino/server/public/* /absolute_path_to/casino/static
+
+sudo ln -s /absolute_path_to/casino/server/public/\* /absolute_path_to/casino/static
 
 #### Client Setup
 
@@ -59,8 +58,10 @@ $ adonis serve
 ```
 
 #### Env (client) Setup
-* BASE_URL - url to server
-* CLIENT_URL - url to client
+
+- BASE_URL - url to server
+- CLIENT_URL - url to client
 
 #### Env (server) Setup
-* CLIENT_URL - url to client
+
+- CLIENT_URL - url to client

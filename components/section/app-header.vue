@@ -46,7 +46,7 @@
       > -->
       <div class="relative w-10 cursor-pointer">
         <img
-          :src="baseUrl + $auth.user.avatar"
+          :src="$auth.user.avatar"
           :alt="$auth.user.username"
           class="w-10 w-full h-10 rounded-full"
         />
