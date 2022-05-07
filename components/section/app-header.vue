@@ -38,38 +38,39 @@
         > -->
       </nav>
       <user-balance class="hidden sm:flex" />
-      <!-- <nuxt-link
-        v-if="$auth.loggedIn"
+      <div v-if="$auth.loggedIn">
+        <!-- <nuxt-link
         v-tooltip="$t('profile-edit')"
         :to="{ name: 'profile' }"
         class="flex items-center justify-end flex-1 md:flex-none"
       > -->
-      <div class="relative w-10 cursor-pointer">
-        <img
-          :src="$auth.user.avatar"
-          :alt="$auth.user.username"
-          class="w-10 w-full h-10 rounded-full"
-        />
-        <button
-          class="absolute top-0 right-0 transition-all transform translate-x-1 -translate-y-1 rounded-md bg-cream hover:bg-primary"
-          type="button"
-        >
-          <EditIcon />
-        </button>
+        <div class="relative w-10 cursor-pointer">
+          <img
+            :src="$auth.user.avatar"
+            :alt="$auth.user.username"
+            class="w-10 w-full h-10 rounded-full"
+          />
+          <button
+            class="absolute top-0 right-0 transition-all transform translate-x-1 -translate-y-1 rounded-md bg-cream hover:bg-primary"
+            type="button"
+          >
+            <EditIcon />
+          </button>
+        </div>
+        <div class="flex flex-col flex-wrap ml-3 text-xs font-semibold">
+          <template v-if="$auth.user.first_name || $auth.user.last_name">
+            <span>{{ $auth.user.first_name }}</span>
+            <span>{{ $auth.user.last_name }}</span>
+          </template>
+          <template v-else-if="$auth.user.username">
+            <span>{{ $auth.user.username }}</span>
+          </template>
+          <template v-else>
+            <span>{{ $t('profile-you') }}</span>
+          </template>
+        </div>
+        <!-- </nuxt-link> -->
       </div>
-      <div class="flex flex-col flex-wrap ml-3 text-xs font-semibold">
-        <template v-if="$auth.user.first_name || $auth.user.last_name">
-          <span>{{ $auth.user.first_name }}</span>
-          <span>{{ $auth.user.last_name }}</span>
-        </template>
-        <template v-else-if="$auth.user.username">
-          <span>{{ $auth.user.username }}</span>
-        </template>
-        <template v-else>
-          <span>{{ $t('profile-you') }}</span>
-        </template>
-      </div>
-      <!-- </nuxt-link> -->
       <t-button
         v-if="$auth.loggedIn"
         v-tooltip="$t('profile-exit')"

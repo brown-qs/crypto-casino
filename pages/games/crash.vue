@@ -163,7 +163,7 @@ export default {
           {
             group: 'default',
             type: 'error',
-            text: 'Недостаточно средств',
+            text: 'Insufficient funds',
           },
           4000
         )

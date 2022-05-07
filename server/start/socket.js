@@ -54,7 +54,7 @@ const crashInstance = io
         if (game.start_at < Date.now()) {
           return callback({
             status: 'error',
-            message: 'Игра уже начата! Повторите в следующей.',
+            message: 'The game has already started! Repeat in the next one.',
           })
         }
         if (
@@ -64,7 +64,7 @@ const crashInstance = io
         ) {
           return callback({
             status: 'error',
-            message: 'Недостаточно средств на счёте',
+            message: 'Insufficient funds on the account',
           })
         }
         try {
@@ -82,12 +82,12 @@ const crashInstance = io
         } catch (e) {
           return callback({
             status: 'error',
-            message: 'Вы уже учавствуете в игре!',
+            message: 'You are already in the game!',
           })
         }
         callback({
           status: 'success',
-          message: 'Ваша ставка принята!',
+          message: 'Your bid has been accepted!',
         })
       })
       .on('bet:take', async () => {

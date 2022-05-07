@@ -68,7 +68,7 @@ class User extends Model {
   }
 
   getAvatar(avatar) {
-    if (!avatar) return '/images/avatar/avatar-default.svg'
+    if (!avatar) return '/img/avatar-default.svg'
     const url = avatar.toString()
     return url.split('\\').join('/')
   }
